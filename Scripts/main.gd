@@ -1,6 +1,8 @@
 extends Control
 
-var bus = Counter.new()
+var bus : Counter = null
+
+const SAVE_PATH = "user://saves/points.tres"
 
 @onready var pointSlider = $VBoxContainer/HBoxContainer/PointSlider
 # Fetch Paths to the Four Tichu Sliders
@@ -11,7 +13,12 @@ var bus = Counter.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if( !DirAccess.dir_exists_absolute( SAVE_PATH ) ):
+		var _e1:Error = DirAccess.make_dir_absolute(SAVE_PATH);
+	if ResourceLoader.exists(SAVE_PATH):
+		bus = ResourceLoader.load(SAVE_PATH)
+	else:
+		bus = Counter.new()
 
 
 #func _on_point_slider_drag_ended(value_changed: bool) -> void:
@@ -42,4 +49,5 @@ func _on_save_pressed() -> void:
 	
 	bus.points_team_1 += switchTichu(tichuSlider1.value) + switchTichu(grossesTichuSlider1.value)*2
 	bus.points_team_2 += switchTichu(tichuSlider2.value) + switchTichu(grossesTichuSlider2.value)*2
+	ResourceSaver.save(bus, SAVE_PATH)
 	print(bus.points_team_1, " ", bus.points_team_2)
