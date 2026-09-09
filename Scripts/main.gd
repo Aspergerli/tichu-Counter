@@ -2,7 +2,7 @@ extends Control
 
 var bus : Counter = null
 
-const SAVE_PATH = "user://saves/points.tres"
+const SAVE_PATH = "user://save.tres"
 
 @onready var pointSlider = $VBoxContainer/HBoxContainer/PointSlider
 # Fetch Paths to the Four Tichu Sliders
