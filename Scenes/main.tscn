@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://clynyd6y74p0t"]
 
 [ext_resource type="Script" uid="uid://ct68pqft22fq8" path="res://Scenes/main.gd" id="1_jjgbg"]
+[ext_resource type="LabelSettings" uid="uid://b8btxa0drufef" path="res://text/pointsText.tres" id="2_8gbba"]
+[ext_resource type="LabelSettings" uid="uid://d04h6vstt0e8g" path="res://text/numText.tres" id="3_jjvhh"]
 
 [node name="Control" type="Control" unique_id=1470058033]
 layout_mode = 3
@@ -19,9 +21,63 @@ offset_top = 201.0
 offset_right = 990.0
 offset_bottom = 2211.0
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1940858405]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1854120460]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Team 1"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1389346296]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Team 2"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1772499049]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=1706409896]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "000"
+label_settings = ExtResource("2_8gbba")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=260495265]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "000"
+label_settings = ExtResource("2_8gbba")
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=1632968013]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4" unique_id=292622205]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "23342"
+label_settings = ExtResource("3_jjvhh")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4" unique_id=1848326147]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "50"
+label_settings = ExtResource("3_jjvhh")
+horizontal_alignment = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1249139809]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.24
 alignment = 1
 
 [node name="PointSlider" type="HSlider" parent="VBoxContainer/HBoxContainer" unique_id=308580613]
