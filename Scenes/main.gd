@@ -2,13 +2,14 @@ extends Control
 
 var bus = Counter.new()
 
-@onready var pointSlider = $VBoxContainer/HBoxContainer/PointSlider
+@onready var pointSlider = $BoxContainer/VBoxContainer/SliderContainer/PointSlider
 # Fetch Paths to the Four Tichu Sliders
-@onready var tichuSlider1 = $VBoxContainer/GridContainer/TichuSlider1
-@onready var tichuSlider2 = $VBoxContainer/GridContainer/TichuSlider2
-@onready var grossesTichuSlider1 = $VBoxContainer/GridContainer/GTichuSlider1
-@onready var grossesTichuSlider2 = $VBoxContainer/GridContainer/GTichuSlider2
+@onready var tichuSlider1 = $BoxContainer/VBoxContainer/TichuContainer/TichuSlider1
+@onready var tichuSlider2 = $BoxContainer/VBoxContainer/TichuContainer/TichuSlider2
+@onready var grossesTichuSlider1 = $BoxContainer/VBoxContainer/TichuContainer/GTichuSlider1
+@onready var grossesTichuSlider2 = $BoxContainer/VBoxContainer/TichuContainer/GTichuSlider2
 
+signal write(pointsTeam1, pointsTeam2)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -32,14 +33,19 @@ func switchTichu(value: int):
 func _on_save_pressed() -> void:
 	match int(pointSlider.value):
 		-30:
-			bus.points_team_1 += 200
+			bus.points_team_2 += 200
 			
 		130:
-			bus.points_team_2 += 200
+			bus.points_team_1 += 200
 		_:
-			bus.points_team_1 += 100 - pointSlider.value
-			bus.points_team_2 += pointSlider.value
+			bus.points_team_2 += 100 - pointSlider.value
+			bus.points_team_1 += pointSlider.value
 	
 	bus.points_team_1 += switchTichu(tichuSlider1.value) + switchTichu(grossesTichuSlider1.value)*2
 	bus.points_team_2 += switchTichu(tichuSlider2.value) + switchTichu(grossesTichuSlider2.value)*2
+<<<<<<< Updated upstream:Scenes/main.gd
+=======
+	ResourceSaver.save(bus, SAVE_PATH)
+	write.emit(bus.points_team_1, bus.points_team_2)
+>>>>>>> Stashed changes:Scripts/main.gd
 	print(bus.points_team_1, " ", bus.points_team_2)
