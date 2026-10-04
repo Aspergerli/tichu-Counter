@@ -1,98 +1,97 @@
 [gd_scene format=3 uid="uid://clynyd6y74p0t"]
 
-[ext_resource type="Script" uid="uid://ct68pqft22fq8" path="res://Scenes/main.gd" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://ct68pqft22fq8" path="res://Scripts/main.gd" id="1_jjgbg"]
 [ext_resource type="LabelSettings" uid="uid://b8btxa0drufef" path="res://text/pointsText.tres" id="2_8gbba"]
-[ext_resource type="Script" uid="uid://b7iaaxs03cnwy" path="res://Scenes/box_container.gd" id="2_jjvhh"]
+[ext_resource type="Script" uid="uid://b7iaaxs03cnwy" path="res://Scripts/box_container.gd" id="2_jjvhh"]
 [ext_resource type="LabelSettings" uid="uid://d04h6vstt0e8g" path="res://text/numText.tres" id="3_jjvhh"]
-[ext_resource type="Script" uid="uid://xi5hga237gmt" path="res://Scenes/team_point_container.gd" id="4_kry3j"]
-[ext_resource type="Script" uid="uid://ddlkjqlw5hfkd" path="res://Scenes/slider_point_container.gd" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://xi5hga237gmt" path="res://Scripts/team_point_container.gd" id="4_kry3j"]
+[ext_resource type="Script" uid="uid://ddlkjqlw5hfkd" path="res://Scripts/slider_point_container.gd" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://bluxyunyjlyft" path="res://Scripts/labels_tichu_slider.gd" id="7_6bp64"]
+[ext_resource type="LabelSettings" uid="uid://duoipjdy7c4bl" path="res://text/TichuText.tres" id="8_344ge"]
+[ext_resource type="Script" uid="uid://bi4nvkt30xtmu" path="res://Scripts/lables_g_tichu_slider.gd" id="9_ynf5e"]
+[ext_resource type="Theme" uid="uid://4h5dwwuc6j3b" path="res://text/buttons.tres" id="10_hptm8"]
 
 [node name="Control" type="Control" unique_id=1470058033]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1080.0
-offset_bottom = 2412.0
 script = ExtResource("1_jjgbg")
 metadata/_edit_vertical_guides_ = [1923.0, 90.0, 990.0]
 metadata/_edit_horizontal_guides_ = [163.0, 2211.0]
 
-[node name="BoxContainer" type="BoxContainer" parent="." unique_id=1267711662]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=721919192]
+propagate_maximum_size = false
 layout_mode = 0
 offset_left = 90.0
 offset_top = 160.0
 offset_right = 990.0
 offset_bottom = 1760.0
+size_flags_horizontal = 3
 script = ExtResource("2_jjvhh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer" unique_id=721919192]
-propagate_maximum_size = false
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TeamNameContainer" type="HBoxContainer" parent="BoxContainer/VBoxContainer" unique_id=1940858405]
+[node name="TeamNameContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1940858405]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="LabelTeam1" type="Label" parent="BoxContainer/VBoxContainer/TeamNameContainer" unique_id=1854120460]
+[node name="LabelTeam1" type="Label" parent="VBoxContainer/TeamNameContainer" unique_id=1854120460]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Team 1"
 label_settings = ExtResource("3_jjvhh")
 horizontal_alignment = 1
 
-[node name="LabelTeam2" type="Label" parent="BoxContainer/VBoxContainer/TeamNameContainer" unique_id=1389346296]
+[node name="LabelTeam2" type="Label" parent="VBoxContainer/TeamNameContainer" unique_id=1389346296]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Team 2"
 label_settings = ExtResource("3_jjvhh")
 horizontal_alignment = 1
 
-[node name="TeamPointContainer" type="HBoxContainer" parent="BoxContainer/VBoxContainer" unique_id=1772499049]
+[node name="TeamPointContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1772499049]
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("4_kry3j")
 
-[node name="PointsTeam1" type="Label" parent="BoxContainer/VBoxContainer/TeamPointContainer" unique_id=1706409896]
+[node name="PointsTeam1" type="Label" parent="VBoxContainer/TeamPointContainer" unique_id=1706409896]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "000"
 label_settings = ExtResource("2_8gbba")
 horizontal_alignment = 1
 
-[node name="PointsTeam2" type="Label" parent="BoxContainer/VBoxContainer/TeamPointContainer" unique_id=260495265]
+[node name="PointsTeam2" type="Label" parent="VBoxContainer/TeamPointContainer" unique_id=260495265]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "000"
 label_settings = ExtResource("2_8gbba")
 horizontal_alignment = 1
 
-[node name="SliderPointContainer" type="HBoxContainer" parent="BoxContainer/VBoxContainer" unique_id=1632968013]
+[node name="SliderPointContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1632968013]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 script = ExtResource("6_21xkr")
 
-[node name="SliderTeam1" type="Label" parent="BoxContainer/VBoxContainer/SliderPointContainer" unique_id=292622205]
+[node name="SliderTeam1" type="Label" parent="VBoxContainer/SliderPointContainer" unique_id=292622205]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "23342"
+text = "50"
 label_settings = ExtResource("3_jjvhh")
 
-[node name="SliderTeam2" type="Label" parent="BoxContainer/VBoxContainer/SliderPointContainer" unique_id=1848326147]
+[node name="SliderTeam2" type="Label" parent="VBoxContainer/SliderPointContainer" unique_id=1848326147]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "50"
 label_settings = ExtResource("3_jjvhh")
 horizontal_alignment = 2
 
-[node name="SliderContainer" type="HBoxContainer" parent="BoxContainer/VBoxContainer" unique_id=1249139809]
+[node name="SliderContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1249139809]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.24
 alignment = 1
 
-[node name="PointSlider" type="HSlider" parent="BoxContainer/VBoxContainer/SliderContainer" unique_id=308580613]
+[node name="PointSlider" type="HSlider" parent="VBoxContainer/SliderContainer" unique_id=308580613]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -105,70 +104,103 @@ tick_count = 11
 ticks_on_borders = true
 ticks_position = 3
 
-[node name="TichuContainer" type="GridContainer" parent="BoxContainer/VBoxContainer" unique_id=475770376]
+[node name="TichuContainer" type="GridContainer" parent="VBoxContainer" unique_id=475770376]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 
-[node name="TichuSlider1" type="HSlider" parent="BoxContainer/VBoxContainer/TichuContainer" unique_id=132513299]
+[node name="TichuSlider1" type="HSlider" parent="VBoxContainer/TichuContainer" unique_id=132513299]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 2
+size_flags_vertical = 6
 max_value = 2.0
 value = 1.0
 
-[node name="LabelsTichuSlider" type="HBoxContainer" parent="BoxContainer/VBoxContainer/TichuContainer" unique_id=124699248]
+[node name="LabelsTichuSlider" type="HBoxContainer" parent="VBoxContainer/TichuContainer" unique_id=124699248]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("7_6bp64")
 
-[node name="Label" type="Label" parent="BoxContainer/VBoxContainer/TichuContainer/LabelsTichuSlider" unique_id=2116707143]
+[node name="TichuLabel1" type="Label" parent="VBoxContainer/TichuContainer/LabelsTichuSlider" unique_id=2116707143]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+label_settings = ExtResource("8_344ge")
+vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="BoxContainer/VBoxContainer/TichuContainer/LabelsTichuSlider" unique_id=825702905]
+[node name="TichuLabel2" type="Label" parent="VBoxContainer/TichuContainer/LabelsTichuSlider" unique_id=825702905]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+label_settings = ExtResource("8_344ge")
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_trim_flags = 0
 
-[node name="TichuSlider2" type="HSlider" parent="BoxContainer/VBoxContainer/TichuContainer" unique_id=918764813]
+[node name="TichuSlider2" type="HSlider" parent="VBoxContainer/TichuContainer" unique_id=918764813]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 6
 max_value = 2.0
 value = 1.0
 
-[node name="GTichuSlider1" type="HSlider" parent="BoxContainer/VBoxContainer/TichuContainer" unique_id=2106446075]
+[node name="GTichuSlider1" type="HSlider" parent="VBoxContainer/TichuContainer" unique_id=2106446075]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 2
+size_flags_vertical = 6
 max_value = 2.0
 value = 1.0
 
-[node name="LablesGTichuSlider" type="HBoxContainer" parent="BoxContainer/VBoxContainer/TichuContainer" unique_id=1554670582]
+[node name="LablesGTichuSlider" type="HBoxContainer" parent="VBoxContainer/TichuContainer" unique_id=1554670582]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_ynf5e")
 
-[node name="Label" type="Label" parent="BoxContainer/VBoxContainer/TichuContainer/LablesGTichuSlider" unique_id=925584518]
+[node name="GTichuLabel1" type="Label" parent="VBoxContainer/TichuContainer/LablesGTichuSlider" unique_id=925584518]
 layout_mode = 2
 size_flags_horizontal = 3
+label_settings = ExtResource("8_344ge")
+vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="BoxContainer/VBoxContainer/TichuContainer/LablesGTichuSlider" unique_id=2062940646]
+[node name="GTichuLabel2" type="Label" parent="VBoxContainer/TichuContainer/LablesGTichuSlider" unique_id=2062940646]
 layout_mode = 2
 size_flags_horizontal = 3
+label_settings = ExtResource("8_344ge")
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="GTichuSlider2" type="HSlider" parent="BoxContainer/VBoxContainer/TichuContainer" unique_id=2085263728]
+[node name="GTichuSlider2" type="HSlider" parent="VBoxContainer/TichuContainer" unique_id=2085263728]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 6
 max_value = 2.0
 value = 1.0
 
-[node name="Button" type="Button" parent="BoxContainer/VBoxContainer" unique_id=1721221978]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=722147996]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+
+[node name="UndoButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1867166698]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_hptm8")
+text = "Undo"
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1721221978]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("10_hptm8")
 text = "Save"
 
-[connection signal="write" from="." to="BoxContainer/VBoxContainer/TeamPointContainer" method="_on_write"]
-[connection signal="value_changed" from="BoxContainer/VBoxContainer/SliderContainer/PointSlider" to="BoxContainer/VBoxContainer/SliderPointContainer" method="_on_point_value_changed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/Button" to="." method="_on_save_pressed"]
+[connection signal="write" from="." to="VBoxContainer/TeamPointContainer" method="_on_write"]
+[connection signal="value_changed" from="VBoxContainer/SliderContainer/PointSlider" to="VBoxContainer/SliderPointContainer" method="_on_point_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/TichuContainer/TichuSlider1" to="VBoxContainer/TichuContainer/LabelsTichuSlider" method="_on_tichu_slider_1_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/TichuContainer/TichuSlider2" to="VBoxContainer/TichuContainer/LabelsTichuSlider" method="_on_tichu_slider_2_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/TichuContainer/GTichuSlider1" to="VBoxContainer/TichuContainer/LablesGTichuSlider" method="_on_g_tichu_slider_1_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/TichuContainer/GTichuSlider2" to="VBoxContainer/TichuContainer/LablesGTichuSlider" method="_on_g_tichu_slider_2_value_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/UndoButton" to="." method="_on_undo_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_pressed"]

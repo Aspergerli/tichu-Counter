@@ -3,7 +3,7 @@ extends HBoxContainer
 @onready var team1 = $SliderTeam1
 @onready var team2 = $SliderTeam2
 
-func _on_point_value_changed(value: float) -> void:
+func _on_point_value_changed(value: int) -> void:
 	match int(value):
 		-30:
 			team2.text = str(200)
