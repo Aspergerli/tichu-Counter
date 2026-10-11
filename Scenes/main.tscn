@@ -12,6 +12,7 @@
 [ext_resource type="LabelSettings" uid="uid://duoipjdy7c4bl" path="res://text/TichuText.tres" id="8_344ge"]
 [ext_resource type="Script" uid="uid://bi4nvkt30xtmu" path="res://Scripts/lables_g_tichu_slider.gd" id="9_ynf5e"]
 [ext_resource type="Theme" uid="uid://4h5dwwuc6j3b" path="res://text/buttons.tres" id="10_hptm8"]
+[ext_resource type="Theme" uid="uid://drrumylijiae8" path="res://text/Sliders.tres" id="10_jkdf5"]
 [ext_resource type="Texture2D" uid="uid://dcoy21l5ba3jr" path="res://Assets/tickback_export.svg" id="12_6iyac"]
 
 [node name="Control" type="Control" unique_id=1470058033]
@@ -109,12 +110,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 tooltip_text = "hsth"
+theme = ExtResource("10_jkdf5")
 min_value = -30.0
 max_value = 130.0
 step = 5.0
 value = 50.0
-tick_count = 11
-ticks_on_borders = true
+tick_count = 15
 ticks_position = 3
 
 [node name="TichuContainer" type="GridContainer" parent="VBoxContainer" unique_id=475770376]
@@ -127,8 +128,11 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme = ExtResource("10_jkdf5")
 max_value = 2.0
 value = 1.0
+tick_count = 1
+ticks_position = 3
 
 [node name="LabelsTichuSlider" type="HBoxContainer" parent="VBoxContainer/TichuContainer" unique_id=124699248]
 layout_mode = 2
@@ -156,16 +160,22 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme = ExtResource("10_jkdf5")
 max_value = 2.0
 value = 1.0
+tick_count = 1
+ticks_position = 3
 
 [node name="GTichuSlider1" type="HSlider" parent="VBoxContainer/TichuContainer" unique_id=2106446075]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme = ExtResource("10_jkdf5")
 max_value = 2.0
 value = 1.0
+tick_count = 1
+ticks_position = 3
 
 [node name="LablesGTichuSlider" type="HBoxContainer" parent="VBoxContainer/TichuContainer" unique_id=1554670582]
 layout_mode = 2
@@ -190,8 +200,10 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme = ExtResource("10_jkdf5")
 max_value = 2.0
 value = 1.0
+ticks_position = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=722147996]
 layout_mode = 2
