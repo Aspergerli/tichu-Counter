@@ -62,6 +62,7 @@ func draw_graph():
 	lineConf.style.fills.append(fillConf)
 	
 	x_axis.scale = TauAxisConfig.Scale.LINEAR
+	x_axis.tick_count_preferred = Globals.counter.points_team_1.size()
 	x_axis.title = "round"
 	x_axis.include_zero_in_domain = true
 	
