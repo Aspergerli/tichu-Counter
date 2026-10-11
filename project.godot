@@ -15,6 +15,10 @@ run/main_scene="uid://clynyd6y74p0t"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*uid://dsaem17kfndbe"
+
 [display]
 
 window/size/viewport_width=1080
@@ -22,6 +26,10 @@ window/size/viewport_height=1920
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/tau-plot/plugin.cfg")
 
 [gui]
 

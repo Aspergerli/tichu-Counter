@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://brsbxwrdjpvlo"]
+
+[ext_resource type="Script" uid="uid://b7iaaxs03cnwy" path="res://Scripts/box_container.gd" id="1_4geyq"]
+[ext_resource type="Script" uid="uid://y3eavpfksscb" path="res://Scripts/settings.gd" id="1_i44u3"]
+[ext_resource type="LabelSettings" uid="uid://duoipjdy7c4bl" path="res://text/TichuText.tres" id="3_aaqfp"]
+[ext_resource type="Theme" uid="uid://4h5dwwuc6j3b" path="res://text/buttons.tres" id="4_j2dne"]
+[ext_resource type="Texture2D" uid="uid://dcoy21l5ba3jr" path="res://Assets/tickback_export.svg" id="5_j2dne"]
+
+[node name="Control" type="Control" unique_id=1472705281]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i44u3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1621735505]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 160.0
+offset_right = 990.0
+offset_bottom = 1760.0
+script = ExtResource("1_4geyq")
+
+[node name="NameEditTeam1" type="LineEdit" parent="VBoxContainer" unique_id=2144826226]
+layout_mode = 2
+theme = ExtResource("4_j2dne")
+placeholder_text = "Team 1 Name"
+
+[node name="NameEditTeam2" type="LineEdit" parent="VBoxContainer" unique_id=292955414]
+layout_mode = 2
+theme = ExtResource("4_j2dne")
+placeholder_text = "Team 2 Name"
+
+[node name="TargetPointsContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1008694433]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TargetPointsContainer" unique_id=2082583567]
+layout_mode = 2
+text = "Points to win"
+label_settings = ExtResource("3_aaqfp")
+
+[node name="TargetPoints" type="LineEdit" parent="VBoxContainer/TargetPointsContainer" unique_id=1709405559]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_j2dne")
+virtual_keyboard_type = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=231627389]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1295446723]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Show game graph"
+label_settings = ExtResource("3_aaqfp")
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer" unique_id=2108612015]
+layout_mode = 2
+button_pressed = true
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer" unique_id=1262960328]
+layout_mode = 2
+theme = ExtResource("4_j2dne")
+text = "New Game"
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer" unique_id=156369997]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("4_j2dne")
+text = " "
+icon = ExtResource("5_j2dne")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

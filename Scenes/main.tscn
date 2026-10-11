@@ -4,12 +4,15 @@
 [ext_resource type="LabelSettings" uid="uid://b8btxa0drufef" path="res://text/pointsText.tres" id="2_8gbba"]
 [ext_resource type="Script" uid="uid://b7iaaxs03cnwy" path="res://Scripts/box_container.gd" id="2_jjvhh"]
 [ext_resource type="LabelSettings" uid="uid://d04h6vstt0e8g" path="res://text/numText.tres" id="3_jjvhh"]
+[ext_resource type="Script" uid="uid://jawhv4cky3du" path="res://Scripts/team_name_container.gd" id="4_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://di67sxejf4kae" path="res://Assets/cog.svg" id="4_fdnlq"]
 [ext_resource type="Script" uid="uid://xi5hga237gmt" path="res://Scripts/team_point_container.gd" id="4_kry3j"]
 [ext_resource type="Script" uid="uid://ddlkjqlw5hfkd" path="res://Scripts/slider_point_container.gd" id="6_21xkr"]
 [ext_resource type="Script" uid="uid://bluxyunyjlyft" path="res://Scripts/labels_tichu_slider.gd" id="7_6bp64"]
 [ext_resource type="LabelSettings" uid="uid://duoipjdy7c4bl" path="res://text/TichuText.tres" id="8_344ge"]
 [ext_resource type="Script" uid="uid://bi4nvkt30xtmu" path="res://Scripts/lables_g_tichu_slider.gd" id="9_ynf5e"]
 [ext_resource type="Theme" uid="uid://4h5dwwuc6j3b" path="res://text/buttons.tres" id="10_hptm8"]
+[ext_resource type="Texture2D" uid="uid://dcoy21l5ba3jr" path="res://Assets/tickback_export.svg" id="12_6iyac"]
 
 [node name="Control" type="Control" unique_id=1470058033]
 layout_mode = 3
@@ -28,10 +31,20 @@ offset_bottom = 1760.0
 size_flags_horizontal = 3
 script = ExtResource("2_jjvhh")
 
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1127201891]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("10_hptm8")
+text = "     "
+icon = ExtResource("4_fdnlq")
+icon_alignment = 1
+expand_icon = true
+
 [node name="TeamNameContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1940858405]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
+script = ExtResource("4_d1ilt")
 
 [node name="LabelTeam1" type="Label" parent="VBoxContainer/TeamNameContainer" unique_id=1854120460]
 layout_mode = 2
@@ -55,14 +68,14 @@ script = ExtResource("4_kry3j")
 [node name="PointsTeam1" type="Label" parent="VBoxContainer/TeamPointContainer" unique_id=1706409896]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "000"
+text = "0"
 label_settings = ExtResource("2_8gbba")
 horizontal_alignment = 1
 
 [node name="PointsTeam2" type="Label" parent="VBoxContainer/TeamPointContainer" unique_id=260495265]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "000"
+text = "0"
 label_settings = ExtResource("2_8gbba")
 horizontal_alignment = 1
 
@@ -187,7 +200,9 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_hptm8")
-text = "Undo"
+icon = ExtResource("12_6iyac")
+icon_alignment = 1
+expand_icon = true
 
 [node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1721221978]
 layout_mode = 2
@@ -196,7 +211,9 @@ size_flags_stretch_ratio = 3.0
 theme = ExtResource("10_hptm8")
 text = "Save"
 
+[connection signal="write" from="." to="VBoxContainer/TeamNameContainer" method="_on_control_write"]
 [connection signal="write" from="." to="VBoxContainer/TeamPointContainer" method="_on_write"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/SliderContainer/PointSlider" to="VBoxContainer/SliderPointContainer" method="_on_point_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/TichuContainer/TichuSlider1" to="VBoxContainer/TichuContainer/LabelsTichuSlider" method="_on_tichu_slider_1_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/TichuContainer/TichuSlider2" to="VBoxContainer/TichuContainer/LabelsTichuSlider" method="_on_tichu_slider_2_value_changed"]

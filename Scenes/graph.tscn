@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c7dlspsth0egp"]
+
+[ext_resource type="Script" uid="uid://dm8k0vql6og1h" path="res://Scripts/graph.gd" id="1_1qjs7"]
+[ext_resource type="Script" uid="uid://b7iaaxs03cnwy" path="res://Scripts/box_container.gd" id="1_f7yq8"]
+[ext_resource type="Script" uid="uid://dnhvsf2wip771" path="res://addons/tau-plot/plot/plot.gd" id="3_bb5eo"]
+[ext_resource type="Script" uid="uid://w4lo2j0mndt5" path="res://Scripts/button.gd" id="4_bb5eo"]
+
+[node name="Control" type="Control" unique_id=1043116008]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1qjs7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2104608061]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_f7yq8")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=154808870]
+layout_mode = 2
+text = "THE END"
+horizontal_alignment = 1
+
+[node name="Graph" type="PanelContainer" parent="VBoxContainer" unique_id=970206850]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_type_variation = &"TauPlot"
+script = ExtResource("3_bb5eo")
+metadata/_custom_type_script = "uid://dnhvsf2wip771"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=750938083]
+layout_mode = 2
+size_flags_vertical = 10
+text = "New Game"
+script = ExtResource("4_bb5eo")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]
