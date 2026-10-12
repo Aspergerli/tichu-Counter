@@ -7,9 +7,10 @@ func _on_point_value_changed(value: int) -> void:
 	match int(value):
 		-30:
 			team2.text = str(200)
-			
+			team1.text = str(0)
 		130:
 			team1.text = str(200)
+			team2.text = str(0)
 		_:
 			team2.text = str(100 - value)
 			team1.text = str(value)

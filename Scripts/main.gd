@@ -35,10 +35,10 @@ func _on_save_pressed() -> void:
 	
 	match int(pointSlider.value):
 		-30:
-			team_1 += 200
+			team_2 += 200
 			
 		130:
-			team_2 += 200
+			team_1 += 200
 		_:
 			team_2 += 100 - pointSlider.value
 			team_1 += pointSlider.value

@@ -34,7 +34,7 @@ script = ExtResource("2_jjvhh")
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1127201891]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 theme = ExtResource("10_hptm8")
 text = "     "
 icon = ExtResource("4_fdnlq")
@@ -140,6 +140,7 @@ size_flags_horizontal = 3
 script = ExtResource("7_6bp64")
 
 [node name="TichuLabel1" type="Label" parent="VBoxContainer/TichuContainer/LabelsTichuSlider" unique_id=2116707143]
+z_index = 1
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -147,6 +148,7 @@ label_settings = ExtResource("8_344ge")
 vertical_alignment = 1
 
 [node name="TichuLabel2" type="Label" parent="VBoxContainer/TichuContainer/LabelsTichuSlider" unique_id=825702905]
+z_index = 1
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -183,12 +185,14 @@ size_flags_horizontal = 3
 script = ExtResource("9_ynf5e")
 
 [node name="GTichuLabel1" type="Label" parent="VBoxContainer/TichuContainer/LablesGTichuSlider" unique_id=925584518]
+z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 label_settings = ExtResource("8_344ge")
 vertical_alignment = 1
 
 [node name="GTichuLabel2" type="Label" parent="VBoxContainer/TichuContainer/LablesGTichuSlider" unique_id=2062940646]
+z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 label_settings = ExtResource("8_344ge")
